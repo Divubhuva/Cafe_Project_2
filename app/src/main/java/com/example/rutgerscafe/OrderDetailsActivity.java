@@ -17,7 +17,6 @@ import java.util.ArrayList;
 
 public class OrderDetailsActivity extends AppCompatActivity {
     private  CafeHandler cafehandler =  CafeHandler.getCafeInstace();
-    private static final int START_COUNT = 1;
     private ArrayList<String> placeOrderList;
     private ArrayAdapter plcaeOrderAdepter;
 
@@ -91,6 +90,13 @@ public class OrderDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(cafehandler.placeOrderInStore()){
+                    placeOrderList.clear();
+                    placeOrderList.addAll(cafehandler.getCurrentOrderStringList());
+                    SubtotalText.setText(cafehandler.getCurrentOderSubTotal());
+                    SalesTaxText.setText(cafehandler.getCurrentOrderSalesTax());
+                    TotalText.setText(cafehandler.getCurrentOderTotal());
+                    plcaeOrderAdepter.notifyDataSetChanged();
+
                     Toast.makeText(OrderDetailsActivity.this,"Place The Store Order.",
                             Toast.LENGTH_SHORT).show();
                 }

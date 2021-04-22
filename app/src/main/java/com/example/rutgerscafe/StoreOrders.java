@@ -71,13 +71,6 @@ public class StoreOrders implements Customizable,Serializable{
         return remove;
 	}
 
-	/**
-	 * Returns the list of CurrentOrders.
-	 * @return the list of CurrentOrders.
-	 */
-	public ArrayList<Orders> getObserveOrderList(){
-		return orderList;
-	}
 
 	/**
 	 * This generates the order number.
@@ -93,11 +86,11 @@ public class StoreOrders implements Customizable,Serializable{
 	 *
 	 * @return the information in the database as a String.
 	 */
-	public String exportDatabase() {
-    	String exportString = "";
+	public ArrayList<String> getAllStoreOrder() {
+		ArrayList<String> ret = new ArrayList<String>();
     	
     	if (orderList.isEmpty()) {
-    		return exportString;
+    		return ret;
     	}
     	
     	for (int index = 0;index < orderList.size();index++ ) {
@@ -108,7 +101,8 @@ public class StoreOrders implements Customizable,Serializable{
 		    if (orderItems.isEmpty()) {
 			    continue;
 		    }
-		    
+
+		   String  exportString = "";
 		   DecimalFormat df2 = new DecimalFormat("###,###,##0.00");
 		   exportString += "Order Number " + order.getUniqueOrderNumber() +"\n";
 		   exportString += "Total Cost $" + df2.format(order.getTotalPrice()) +"\n";
@@ -119,9 +113,9 @@ public class StoreOrders implements Customizable,Serializable{
 			    	exportString += "\t"+Items.toString(itemIndex) +"\n";
 			    }
 		    }
-		   
-		   exportString += "\n";
+
+			ret.add(exportString);
     	}
-    	return exportString;
+    	return ret;
     }
 }

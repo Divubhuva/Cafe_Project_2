@@ -392,8 +392,8 @@ public class CafeHandler implements Serializable {
 	 * Gets the store order list.
 	 * @return the store order list of CurrentOrder objects.
 	 */
-	public ArrayList<Orders> getStoreOrderList(){
-		return STORE_ORDER.getObserveOrderList();
+	public ArrayList<String> getStoreOrderList(){
+		return STORE_ORDER.getAllStoreOrder();
 	}
 
 	/**
@@ -405,12 +405,4 @@ public class CafeHandler implements Serializable {
 		return STORE_ORDER.remove(index);
 	}
 
-	/**
-	 * Exports the Database to a string.
-	 * @return A string representation of the database.
-	 */
-	public String exportDatabase() {
-		return STORE_ORDER.exportDatabase();
-	}
-	
 }

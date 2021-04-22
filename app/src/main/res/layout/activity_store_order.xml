@@ -35,115 +35,24 @@
         android:textColor="#ff6345"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/NumOfOrderLable"
         app:layout_constraintEnd_toStartOf="@id/storeOrderImage"
         app:layout_constraintHorizontal_bias="0.984"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <ListView
         android:id="@+id/StoreOrdersDetail"
-        android:layout_width="348dp"
-        android:layout_height="217dp"
+        android:layout_width="337dp"
+        android:layout_height="516dp"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginBottom="187dp"
+        android:layout_marginBottom="25dp"
         android:background="#b0e0e6"
-        android:text="@string/orders"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.564"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NumOfOrderSpinner"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/NumOfOrderLable"
-        android:layout_width="129dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="59dp"
-        android:text="@string/order_number"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/StoreOrdersDetail"
-        app:layout_constraintEnd_toStartOf="@id/NumOfOrderSpinner"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@id/StoreOrder"
-        app:layout_constraintTop_toBottomOf="@id/storeOrderImage"
-        app:layout_constraintVertical_bias="0.16" />
-
-    <Spinner
-        android:id="@+id/NumOfOrderSpinner"
-        android:layout_width="169dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintBottom_toTopOf="@id/StoreOrdersDetail"
-        app:layout_constraintEnd_toEndOf="@id/storeOrderImage"
-        app:layout_constraintHorizontal_bias="0.75"
-        app:layout_constraintStart_toStartOf="@id/NumOfOrderLable"
-        app:layout_constraintTop_toBottomOf="@id/storeOrderImage"
-        app:layout_constraintVertical_bias="0.36" />
-
-    <Button
-        android:id="@+id/CancelOrderButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="153dp"
-        android:layout_marginLeft="153dp"
-        android:layout_marginTop="46dp"
-        android:layout_marginEnd="165dp"
-        android:layout_marginRight="165dp"
-        android:layout_marginBottom="50dp"
-        android:text="@string/cancel_order"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/StoreOrdersDetail" />
-
-    <TextView
-        android:id="@+id/yourOrderTotalLable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="125dp"
-        android:text="@string/total"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/StoreOrdersDetail"
-        app:layout_constraintHorizontal_bias="0.161"
-        app:layout_constraintStart_toStartOf="@id/StoreOrdersDetail"
-        app:layout_constraintTop_toBottomOf="@id/StoreOrdersDetail"
-        app:layout_constraintTop_toTopOf="@id/YourOrderTotalDetail"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/YourOrderTotalDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:layout_marginLeft="75dp"
-        android:layout_marginEnd="197dp"
-        android:layout_marginRight="197dp"
-        android:layout_marginBottom="164dp"
-        android:background="#b0e0e6"
-        android:text="@string/total_amount"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.7"
-        app:layout_constraintStart_toEndOf="@+id/yourOrderTotalLable"
-        app:layout_constraintTop_toBottomOf="@+id/StoreOrdersDetail"
-        app:layout_constraintTop_toTopOf="@id/YourOrderTotalDetail"
-        app:layout_constraintVertical_bias="0.106" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
