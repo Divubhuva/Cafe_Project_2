@@ -180,7 +180,7 @@ public class OrderCoffeeActivity extends AppCompatActivity {
 
                         cafehandler.selectSizeOfCoffee(typeOfsize, new ArrayList<String>(), count);
 
-                        Toast.makeText(OrderCoffeeActivity.this,"Order is added to Your order",
+                        Toast.makeText(OrderCoffeeActivity.this,getResources().getString(R.string.order_added),
                                 Toast.LENGTH_SHORT).show();
                     }
                 }
