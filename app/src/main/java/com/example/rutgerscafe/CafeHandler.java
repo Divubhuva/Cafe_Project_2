@@ -19,7 +19,7 @@ public class CafeHandler implements Serializable {
 	private HashMap<String, CoffeeType> availableSizeOfCoffee = new HashMap<String, CoffeeType>();
 
 
-    private static final int MAX_DONUT_COUNT = 100;
+
 
 
 	private Donut donutHandler = new Donut();
@@ -36,6 +36,8 @@ public class CafeHandler implements Serializable {
 
     private final StoreOrders STORE_ORDER = new StoreOrders();
 
+    private static CafeHandler instace = null;
+
 	/**
 	 * Returns a string representing a double formatted to two decimal places.
 	 * @param val, the value to be converted to a string.
@@ -50,7 +52,7 @@ public class CafeHandler implements Serializable {
 	/**
 	 * Instantiates the cafe handler.
 	 */
-	public  CafeHandler(){
+	private  CafeHandler(){
 		availableDonuts.put(new CakeDonut().getDonutName(), new CakeDonut());
 		availableDonuts.put(new YeastDonut().getDonutName(), new YeastDonut());
 		availableDonuts.put(new DonutHole().getDonutName(), new DonutHole());
@@ -61,6 +63,12 @@ public class CafeHandler implements Serializable {
 		availableSizeOfCoffee.put(new CoffeeVenti().getSizeOfCoffee(), new CoffeeVenti());
 	}
 
+	public static CafeHandler getCafeInstace(){
+		if(instace == null){
+			instace = new CafeHandler();
+		}
+		return instace;
+	}
 
 	/**
 	 * Returns a list of the types of donuts.
@@ -83,13 +91,6 @@ public class CafeHandler implements Serializable {
 		return ret;
 	}
 
-	/**
-	 * Gets the maximum donut count.
-	 * @return the MAX_DONUT_COUNT.
-	 */
-	public int getMaxCount() {
-		return MAX_DONUT_COUNT;
-	}
 
 	/**
 	 * This adds a donut to the list.
@@ -120,6 +121,19 @@ public class CafeHandler implements Serializable {
 		return donutHandler.add(dounte);
 	}
 
+	public ArrayList<String> getDonutOrderList(){
+		ArrayList<String> ret = new ArrayList<String>();
+
+		for (int index = 0; index < donutHandler.getNumberItems();index++){
+			ret.add(donutHandler.toString(index));
+		}
+		return ret ;
+	}
+
+	public int getNumberOfOrderDonuts(){
+		return donutHandler.getNumberItems() ;
+	}
+
 	/**
 	 * Removes a donut at a given index.
 	 * @param index of the donut to be removed.
@@ -135,14 +149,6 @@ public class CafeHandler implements Serializable {
 	 */
 	public String getTotalPriceForDonut() {
 		return getTwoUpToTwoDecimalPoint(donutHandler.itemPrice());
-	}
-
-	/**
-	 * Retrieves the number of ordered donuts.
-	 * @return the number of ordered donuts.
-	 */
-	public int getNumberOfOrderDonuts() {
-		return donutHandler.getNumberItems();
 	}
 
 	/**

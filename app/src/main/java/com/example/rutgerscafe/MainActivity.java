@@ -13,7 +13,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This defines the CafeHandler.
      */
-    private CafeHandler cafehandler  = new CafeHandler();
+    private static final CafeHandler cafehandler  = CafeHandler.getCafeInstace();
+
 
    @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +27,9 @@ public class MainActivity extends AppCompatActivity {
            @Override
            public void onClick(View v) {
 
+
                Intent intent = new Intent(MainActivity.this, OrderDonutActivity.class);
-               intent.putExtra("handler",getCafeHandler());
+
                startActivity(intent);
            }
        });
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
                Intent intent = new Intent(MainActivity.this, OrderCoffeeActivity.class);
 
-               intent.putExtra("handler",getCafeHandler());
+
                startActivity(intent);
            }
        });
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
                Intent intent = new Intent(MainActivity.this, OrderDetailsActivity.class);
 
-               intent.putExtra("handler",getCafeHandler());
+
                startActivity(intent);
            }
        });
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
            public void onClick(View v) {
 
                Intent intent = new Intent(MainActivity.this, StoreOrderActivity.class);
-               intent.putExtra("handler",getCafeHandler());
+
                startActivity(intent);
            }
        });

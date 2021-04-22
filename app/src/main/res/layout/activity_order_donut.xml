@@ -149,7 +149,7 @@
         app:layout_constraintVertical_bias="0.472" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/PriceValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -160,7 +160,7 @@
         app:layout_constraintVertical_bias="0.472" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/AddtoYourOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_to_order"
