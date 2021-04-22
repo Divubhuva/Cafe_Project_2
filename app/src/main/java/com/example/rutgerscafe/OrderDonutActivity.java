@@ -76,7 +76,7 @@ public class OrderDonutActivity extends AppCompatActivity {
                 //Setting message manually and performing action on button click
                 AlertDialog.Builder builder = new AlertDialog.Builder(OrderDonutActivity.this);
 
-                builder.setMessage("Do you want to remove Selected Item?")
+                builder.setMessage(getResources().getString(R.string.donut_alert_question))
                         .setCancelable(false)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {

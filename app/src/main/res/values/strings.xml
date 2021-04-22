@@ -42,4 +42,6 @@
         <item>4</item>
         <item>5</item>
     </string-array>
+
+    <string name="donut_alert_question">Do you want to remove Selected Item?</string>
 </resources>
