@@ -160,7 +160,7 @@
         app:layout_constraintVertical_bias="0.472" />
 
     <Button
-        android:id="@+id/AddtoYourOrder"
+        android:id="@+id/AddDonutToYourOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_to_order"

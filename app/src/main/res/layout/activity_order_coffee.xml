@@ -74,7 +74,7 @@
 
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/AddtoCoffeeYourOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="48dp"
@@ -155,9 +155,9 @@
         app:layout_constraintVertical_bias="0.401" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="3dp"
-        android:layout_height="15dp"
+        android:id="@+id/coffeePriceValue"
+        android:layout_width="58dp"
+        android:layout_height="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.059"

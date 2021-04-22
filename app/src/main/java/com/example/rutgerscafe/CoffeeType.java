@@ -44,6 +44,7 @@ public class CoffeeType implements Serializable {
 	/**
 	 * This is a list that contains the add ins for coffee.
 	 */
+	//private final ArrayList<String> AddIns = new ArrayList<String>(Arrays.asList("Cream", "Syrup", "Milk", "Caramel", "Whipped Cream"));
 	private final ArrayList<String> AddIns = new ArrayList<String>(Arrays.asList("Cream", "Syrup", "Milk", "Caramel", "Whipped Cream"));
 
 	/**
