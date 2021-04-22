@@ -46,12 +46,12 @@ public class OrderDetailsActivity extends AppCompatActivity {
         orderView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Setting message manually and performing action on button click
+                
                 AlertDialog.Builder builder = new AlertDialog.Builder(OrderDetailsActivity.this);
 
-                builder.setMessage("Do you want to remove Selected Item?")
+                builder.setMessage(getString(R.string.donut_alert_question))
                         .setCancelable(false)
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        .setPositiveButton(getResources().getString(R.string.yes_answer), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
 
                                 if (cafehandler.RemoveItemFromCurrentOrder(placeOrderList.get(position))){
@@ -61,25 +61,25 @@ public class OrderDetailsActivity extends AppCompatActivity {
                                     SalesTaxText.setText(cafehandler.getCurrentOrderSalesTax());
                                     TotalText.setText(cafehandler.getCurrentOderTotal());
                                     plcaeOrderAdepter.notifyDataSetChanged();
-                                    Toast.makeText(getApplicationContext(),"Item is Removed",
+                                    Toast.makeText(getApplicationContext(),getResources().getString(R.string.item_removed),
                                             Toast.LENGTH_SHORT).show();
                                     dialog.dismiss();
                                 }
 
                             }
                         })
-                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        .setNegativeButton(getResources().getString(R.string.no_answer), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 //  Action for 'NO' Button
                                 dialog.cancel();
-                                Toast.makeText(getApplicationContext(),"you choose no action for alert box",
+                                Toast.makeText(getApplicationContext(),getResources().getString(R.string.selected_no),
                                         Toast.LENGTH_SHORT).show();
                             }
                         });
                 //Creating dialog box
                 AlertDialog alert = builder.create();
                 //Setting the title manually
-                alert.setTitle("Alert");
+                alert.setTitle(getString(R.string.alert_message));
                 alert.show();
             }
         });
@@ -97,11 +97,11 @@ public class OrderDetailsActivity extends AppCompatActivity {
                     TotalText.setText(cafehandler.getCurrentOderTotal());
                     plcaeOrderAdepter.notifyDataSetChanged();
 
-                    Toast.makeText(OrderDetailsActivity.this,"Place The Store Order.",
+                    Toast.makeText(OrderDetailsActivity.this,getResources().getString(R.string.place_store_order),
                             Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(OrderDetailsActivity.this,"Order is not Placed. OrderList may be empty",
+                    Toast.makeText(OrderDetailsActivity.this,getResources().getString(R.string.order_not_placed),
                             Toast.LENGTH_SHORT).show();
                 }
             }
