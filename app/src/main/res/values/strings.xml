@@ -44,4 +44,11 @@
     </string-array>
 
     <string name="donut_alert_question">Do you want to remove Selected Item?</string>
+    <string name="yes_answer">Yes</string>
+    <string name="item_removed">Item is Removed.</string>
+    <string name="no_answer">No</string>
+    <string name="selected_no">You choose no action for alert box</string>
+    <string name="alert_message">Alert</string>
+    <string name="list_is_empty">Item list is empty</string>
+    <string name="order_added">Order is added to Your order</string>
 </resources>

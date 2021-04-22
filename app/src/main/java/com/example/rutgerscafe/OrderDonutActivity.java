@@ -78,7 +78,7 @@ public class OrderDonutActivity extends AppCompatActivity {
 
                 builder.setMessage(getResources().getString(R.string.donut_alert_question))
                         .setCancelable(false)
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        .setPositiveButton(getResources().getString(R.string.yes_answer), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
 
                                 if (cafehandler.removeDounteFromList(position)){
@@ -86,25 +86,25 @@ public class OrderDonutActivity extends AppCompatActivity {
                                     placeDonutOrderList.addAll(cafehandler.getDonutOrderList());
                                     PriceLabel.setText(cafehandler.getTotalPriceForDonut());
                                     plcaeDonutOrderAdepter.notifyDataSetChanged();
-                                    Toast.makeText(getApplicationContext(),"Item is Removed",
+                                    Toast.makeText(getApplicationContext(),getResources().getString(R.string.item_removed),
                                             Toast.LENGTH_SHORT).show();
                                     dialog.dismiss();
                                 }
 
                             }
                         })
-                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        .setNegativeButton(getResources().getString(R.string.no_answer), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                //  Action for 'NO' Button
+
                                 dialog.cancel();
-                                Toast.makeText(getApplicationContext(),"you choose no action for alert box",
+                                Toast.makeText(getApplicationContext(),getResources().getString(R.string.selected_no),
                                         Toast.LENGTH_SHORT).show();
                             }
                         });
-               //Creating dialog box
+
                 AlertDialog alert = builder.create();
-                //Setting the title manually
-                alert.setTitle("Alert");
+
+                alert.setTitle(getResources().getString(R.string.alert_message));
                 alert.show();
             }
         });
@@ -134,7 +134,7 @@ public class OrderDonutActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(cafehandler.getNumberOfOrderDonuts() == 0){
-                    Toast.makeText(OrderDonutActivity.this,"Item list is empty",
+                    Toast.makeText(OrderDonutActivity.this,getResources().getString(R.string.list_is_empty),
                             Toast.LENGTH_SHORT).show();
                 }
                 else {
@@ -143,7 +143,7 @@ public class OrderDonutActivity extends AppCompatActivity {
                         placeDonutOrderList.addAll(cafehandler.getDonutOrderList());
                         PriceLabel.setText(cafehandler.getTotalPriceForDonut());
                         plcaeDonutOrderAdepter.notifyDataSetChanged();
-                        Toast.makeText(OrderDonutActivity.this,"Order is added to Your order",
+                        Toast.makeText(OrderDonutActivity.this,getResources().getString(R.string.order_added),
                                 Toast.LENGTH_SHORT).show();
                    }
                 }
