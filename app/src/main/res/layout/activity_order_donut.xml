@@ -102,8 +102,10 @@
 
     <Button
         android:id="@+id/AddToList"
-        android:layout_width="164dp"
-        android:layout_height="47dp"
+        android:layout_width="367dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="28dp"
         android:text="@string/add_to_list"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,25 +113,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NumberDonutLabel" />
 
-    <Button
-        android:id="@+id/RemoveFromList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/remove_from_list"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/NumberofDonutSpinner"
-        app:layout_constraintVertical_bias="0.073" />
-
     <ListView
         android:id="@+id/DonutList"
-        android:layout_width="371dp"
-        android:layout_height="253dp"
+        android:layout_width="374dp"
+        android:layout_height="224dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/RemoveFromList"
-        app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toStartOf="@id/AddToList"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.845" />
