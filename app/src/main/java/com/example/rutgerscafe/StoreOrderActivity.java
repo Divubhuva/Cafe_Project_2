@@ -39,33 +39,33 @@ public class StoreOrderActivity extends AppCompatActivity {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(StoreOrderActivity.this);
 
-                builder.setMessage("Do you want to remove Selected Item?")
+                builder.setMessage(getResources().getString(R.string.donut_alert_question))
                         .setCancelable(false)
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        .setPositiveButton(getResources().getString(R.string.yes_answer), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
 
                                 if (cafehandler.RemoveOrder(position)){
                                     storeOrderList.clear();
                                     storeOrderList.addAll(cafehandler.getStoreOrderList());
                                     storeOrderAdepter.notifyDataSetChanged();
-                                    Toast.makeText(getApplicationContext(),"Order is Removed",
+                                    Toast.makeText(getApplicationContext(),getResources().getString(R.string.order_removed),
                                             Toast.LENGTH_SHORT).show();
                                     dialog.dismiss();
                                 }
 
                             }
                         })
-                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        .setNegativeButton(getResources().getString(R.string.no_answer), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
 
                                 dialog.cancel();
-                                Toast.makeText(getApplicationContext(),"you choose no action for alert box",
+                                Toast.makeText(getApplicationContext(),getResources().getString(R.string.selected_no),
                                         Toast.LENGTH_SHORT).show();
                             }
                         });
 
                 AlertDialog alert = builder.create();
-                alert.setTitle("Alert");
+                alert.setTitle(getResources().getString(R.string.alert_message));
                 alert.show();
             }
         });
