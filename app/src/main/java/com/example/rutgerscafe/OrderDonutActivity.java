@@ -51,7 +51,8 @@ public class OrderDonutActivity extends AppCompatActivity {
 
         Spinner donutCount = findViewById(R.id.NumberofDonutSpinner);
         if (cafehandler != null) {
-            ArrayAdapter DonutTypeList = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item,cafehandler.getTypesOfDounts());
+            ArrayAdapter DonutTypeList = ArrayAdapter.createFromResource(this, R.array.count, android.R.layout.simple_spinner_item);
+            DonutTypeList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             donutCount.setAdapter(DonutTypeList);
         }
 

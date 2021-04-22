@@ -35,5 +35,11 @@
     <string name="order_number">Order Number:</string>
     <string name="orders">Orders</string>
     <string name="cancel_order">Cancel Order</string>
-
+    <string-array name="count">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
 </resources>
