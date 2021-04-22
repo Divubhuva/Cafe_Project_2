@@ -45,7 +45,7 @@ public class CafeHandler implements Serializable {
 	 */
 	public String getTwoUpToTwoDecimalPoint(double val)
     {
-        DecimalFormat df2 = new DecimalFormat("###,###,##0.00");
+        DecimalFormat df2 = new DecimalFormat("$###,###,##0.00");
         return df2.format(val);
     }
 
