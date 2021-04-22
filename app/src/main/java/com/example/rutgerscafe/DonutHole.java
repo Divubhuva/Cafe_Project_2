@@ -18,7 +18,7 @@ public class DonutHole extends DonutType
 	/**
 	 * PRICE is the price of a donut hole.
 	 */
-	private final double PRICE = 0.33;
+	private final double PRICE = 1.39;
 
 	/**
 	 * This is the no argument DonutHole constructor.

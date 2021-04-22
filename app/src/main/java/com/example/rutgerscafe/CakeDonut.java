@@ -19,7 +19,7 @@ public class CakeDonut extends DonutType
 	/**
 	 * PRICE is the price of a cake donut
 	 */
-	private final double PRICE = 1.59;
+	private final double PRICE = 1.39;
 
 	/**
 	 * This is the no argument CakeDonut constructor
