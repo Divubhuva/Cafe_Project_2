@@ -111,7 +111,7 @@ public class Coffee extends MenuItem {
 		
 		if(index >= 0 && index < coffeeList.size()) {
 			CoffeeType obj = coffeeList.get(index);
-			ret = obj.getSizeOfCoffee() +" Coffee [ ";
+			ret = obj.getSizeOfCoffee() +" [ ";
 			for(int addInIndex = 0; addInIndex < obj.getAddIns().size(); ++addInIndex) {
 				ret += obj.getAddIns().get(addInIndex);
 				if(addInIndex != (obj.getAddIns().size()-1)) {

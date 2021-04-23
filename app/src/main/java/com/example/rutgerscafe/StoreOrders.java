@@ -104,13 +104,13 @@ public class StoreOrders implements Customizable,Serializable{
 
 		   String  exportString = "";
 		   DecimalFormat df2 = new DecimalFormat("###,###,##0.00");
-		   exportString += "Order Number " + order.getUniqueOrderNumber() +"\n";
-		   exportString += "Total Cost $" + df2.format(order.getTotalPrice()) +"\n";
+		   exportString += order.getUniqueOrderNumber() +"\n";
+		   exportString += "#Cost $" + df2.format(order.getTotalPrice()) +"\n";
 		   
 		   for(int orderindex = 0; orderindex < orderItems.size();orderindex++) {
 			   MenuItem Items  = orderItems.get(orderindex);
 			    for(int itemIndex = 0; itemIndex < Items.getNumberItems();itemIndex++) {
-			    	exportString += "\t"+Items.toString(itemIndex) +"\n";
+			    	exportString += Items.toString(itemIndex) +"\n";
 			    }
 		    }
 

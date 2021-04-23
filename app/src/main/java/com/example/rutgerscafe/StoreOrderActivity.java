@@ -30,8 +30,9 @@ public class StoreOrderActivity extends AppCompatActivity {
 
 
         storeOrderList = new ArrayList<String>();
+
         storeOrderList.addAll(cafehandler.getStoreOrderList());
-        storeOrderAdepter = new ArrayAdapter (this,  android.R.layout.simple_spinner_item,storeOrderList);
+        storeOrderAdepter = new ArrayAdapter (this,  R.layout.custome_list, R.id.list_itemText,storeOrderList);
         ListView storeOrderListView = findViewById(R.id.StoreOrdersDetail);
         storeOrderListView.setAdapter(storeOrderAdepter);
 
@@ -72,6 +73,9 @@ public class StoreOrderActivity extends AppCompatActivity {
                 alert.show();
             }
         });
+
+
+
 
     }
 }
