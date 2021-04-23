@@ -14,6 +14,12 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * Add/remove add-ins and select sizes with running subtotal.
+ *
+ * @author Divya Bhuva, Dorothy Wu
+ */
+
 public class OrderCoffeeActivity extends AppCompatActivity {
     private  CafeHandler cafehandler = CafeHandler.getCafeInstace();
     private static final int START_COUNT = 1;
@@ -23,10 +29,6 @@ public class OrderCoffeeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_coffee);
-
-
-
-
 
         Spinner coffeeType = findViewById(R.id.CoffeeTypeSpinner);
         if (cafehandler != null) {

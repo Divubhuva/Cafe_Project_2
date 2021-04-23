@@ -6,7 +6,11 @@ import android.widget.ImageView;
 import android.content.Intent;
 import android.view.View;
 
-
+/**
+ * This is what is displayed when the app is opened/is the MainActivity.
+ *
+ * @author Divya Bhuva, Dorothy Wu
+ */
 
 public class MainActivity extends AppCompatActivity {
 

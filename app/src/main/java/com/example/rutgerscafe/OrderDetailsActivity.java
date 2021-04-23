@@ -15,6 +15,13 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * Shows the list of menu items added to the order, including the details for each item, and the subotal, sales tax,
+ * and total for the order; user can remove a selected item and place the order.
+ *
+ * @author Divya Bhuva, Dorothy Wu
+ */
+
 public class OrderDetailsActivity extends AppCompatActivity {
     private  CafeHandler cafehandler =  CafeHandler.getCafeInstace();
     private ArrayList<String> placeOrderList;
@@ -76,9 +83,9 @@ public class OrderDetailsActivity extends AppCompatActivity {
                                         Toast.LENGTH_SHORT).show();
                             }
                         });
-                //Creating dialog box
+
                 AlertDialog alert = builder.create();
-                //Setting the title manually
+
                 alert.setTitle(getString(R.string.alert_message));
                 alert.show();
             }

@@ -19,9 +19,6 @@ public class CafeHandler implements Serializable {
 	private HashMap<String, CoffeeType> availableSizeOfCoffee = new HashMap<String, CoffeeType>();
 
 
-
-
-
 	private Donut donutHandler = new Donut();
 
 
@@ -38,6 +35,7 @@ public class CafeHandler implements Serializable {
 
     private static CafeHandler instace = null;
 
+    private static final String DOLLAR = "$";
 	/**
 	 * Returns a string representing a double formatted to two decimal places.
 	 * @param val, the value to be converted to a string.
@@ -63,6 +61,10 @@ public class CafeHandler implements Serializable {
 		availableSizeOfCoffee.put(new CoffeeVenti().getSizeOfCoffee(), new CoffeeVenti());
 	}
 
+	/**
+	 * Retrieves an instance of cafe handler, if null creates one.
+	 * @return instance of the cafe handler.
+	 */
 	public static CafeHandler getCafeInstace(){
 		if(instace == null){
 			instace = new CafeHandler();
@@ -121,6 +123,10 @@ public class CafeHandler implements Serializable {
 		return donutHandler.add(dounte);
 	}
 
+	/**
+	 * Returns a list of the donuts ordered.
+	 * @return a list of the donuts ordered.
+	 */
 	public ArrayList<String> getDonutOrderList(){
 		ArrayList<String> ret = new ArrayList<String>();
 
@@ -130,6 +136,10 @@ public class CafeHandler implements Serializable {
 		return ret ;
 	}
 
+	/**
+	 * Gets the number of donuts ordered.
+	 * @return the number of donuts ordered.
+	 */
 	public int getNumberOfOrderDonuts(){
 		return donutHandler.getNumberItems() ;
 	}
@@ -148,7 +158,7 @@ public class CafeHandler implements Serializable {
 	 * @return the string representation of the total price.
 	 */
 	public String getTotalPriceForDonut() {
-		return getTwoUpToTwoDecimalPoint(donutHandler.itemPrice());
+		return DOLLAR + getTwoUpToTwoDecimalPoint(donutHandler.itemPrice());
 	}
 
 	/**
@@ -259,7 +269,7 @@ public class CafeHandler implements Serializable {
 		if (brewedCoffee != null) {
 			ret = brewedCoffee.itemPrice();
 		}
-		return getTwoUpToTwoDecimalPoint(ret);
+		return DOLLAR + getTwoUpToTwoDecimalPoint(ret);
 	}
 
 	/**
@@ -286,7 +296,7 @@ public class CafeHandler implements Serializable {
 	 * @return the current total order as a String.
 	 */
 	public String getCurrentOderTotal() {
-		return getTwoUpToTwoDecimalPoint(CURRENT_ORDER.getTotalPrice());
+		return DOLLAR + getTwoUpToTwoDecimalPoint(CURRENT_ORDER.getTotalPrice());
 	}
 
 	/**
@@ -294,7 +304,7 @@ public class CafeHandler implements Serializable {
 	 * @return the current sales tax on the current order as a String.
 	 */
 	public String getCurrentOrderSalesTax() {
-		return getTwoUpToTwoDecimalPoint(CURRENT_ORDER.getSalesTax());
+		return DOLLAR + getTwoUpToTwoDecimalPoint(CURRENT_ORDER.getSalesTax());
 	}
 
 	/**
@@ -302,7 +312,7 @@ public class CafeHandler implements Serializable {
 	 * @return the current subtotal on the order as a String.
 	 */
 	public String getCurrentOderSubTotal() {
-		return getTwoUpToTwoDecimalPoint(CURRENT_ORDER.getSubTotal());
+		return DOLLAR + getTwoUpToTwoDecimalPoint(CURRENT_ORDER.getSubTotal());
 	}
 
 	/**

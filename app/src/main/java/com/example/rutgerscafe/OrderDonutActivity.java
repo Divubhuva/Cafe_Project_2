@@ -17,6 +17,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * Add/remove donuts with quantity and running subtotal.
+ *
+ * @author Divya Bhuva, Dorothy Wu
+ */
+
 public class OrderDonutActivity extends AppCompatActivity {
     private  CafeHandler cafehandler = CafeHandler.getCafeInstace();
     private static final int START_COUNT = 1;

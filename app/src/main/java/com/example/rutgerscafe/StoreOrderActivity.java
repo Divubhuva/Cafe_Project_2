@@ -2,18 +2,21 @@ package com.example.rutgerscafe;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+/**
+ * Show the list of orders with the details of every order; user can cancel an order.
+ *
+ * @author Divya Bhuva, Dorothy Wu
+ */
 
 public class StoreOrderActivity extends AppCompatActivity {
     private  CafeHandler cafehandler =  CafeHandler.getCafeInstace();
